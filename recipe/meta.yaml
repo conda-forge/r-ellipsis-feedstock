@@ -1,4 +1,4 @@
-{% set version = '0.0.2' %}
+{% set version = "0.1.0" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ellipsis_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ellipsis/ellipsis_{{ version }}.tar.gz
-  sha256: 4e5e2a34842f2e82da0b1abef8c05f35c829e7ec713d764f40c4a48df512965d
+  sha256: e6f1f30390182b36664b097b5fbf6e95897a766b1ddfa774d3b507f42e26895f
 
 build:
   merge_build_host: True  # [win]
