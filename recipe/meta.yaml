@@ -1,4 +1,4 @@
-{% set version = '0.0.2' %}
+{% set version = '0.1.0' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ellipsis_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ellipsis/ellipsis_{{ version }}.tar.gz
-  sha256: 4e5e2a34842f2e82da0b1abef8c05f35c829e7ec713d764f40c4a48df512965d
+  sha256: e6f1f30390182b36664b097b5fbf6e95897a766b1ddfa774d3b507f42e26895f
 
 build:
   merge_build_host: True  # [win]
@@ -55,7 +55,7 @@ extra:
     - philip-khor
 
 # Package: ellipsis
-# Version: 0.0.2
+# Version: 0.1.0
 # Title: Tools for Working with ...
 # Description: In S3 generics, it's useful to take ... so that methods can have additional argument. But this flexibility comes at a cost: misspelled arguments will be silently ignored. The ellipsis packages is an experiment that allows a generic to warn if any arguments passed in ... are not used.
 # Authors@R: c( person("Hadley", "Wickham", , "hadley@rstudio.com", role = c("aut", "cre")), person("RStudio", role = "cph") )
@@ -68,8 +68,8 @@ extra:
 # Depends: R (>= 3.1)
 # Suggests: covr, testthat
 # NeedsCompilation: yes
-# Packaged: 2019-01-09 13:55:40 UTC; hadley
+# Packaged: 2019-02-18 23:26:43 UTC; hadley
 # Author: Hadley Wickham [aut, cre], RStudio [cph]
 # Maintainer: Hadley Wickham <hadley@rstudio.com>
 # Repository: CRAN
-# Date/Publication: 2019-01-09 14:50:03 UTC
+# Date/Publication: 2019-02-19 05:30:03 UTC
