@@ -1,4 +1,4 @@
-{% set version = "0.2.0" %}
+{% set version = '0.2.0.1' %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ellipsis_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ellipsis/ellipsis_{{ version }}.tar.gz
-  sha256: 2b528689b84047e5eaf67fe9ef1e5a8006f4f12ca6617445c1b6584e703ab341
+  sha256: 0e6528c5e8016c3617cc1cfcdb5a4bfeb073e0bd5ea76b43e56b0c3208a0a943
 
 build:
   merge_build_host: True  # [win]
@@ -21,8 +21,8 @@ build:
 
 requirements:
   build:
-    - {{ compiler('c') }}        # [not win]
-    - {{native}}toolchain        # [win]
+    - {{ compiler('c') }}              # [not win]
+    - {{ compiler('m2w64_c') }}        # [win]
     - {{posix}}filesystem        # [win]
     - {{posix}}make
     - {{posix}}sed               # [win]
@@ -33,8 +33,8 @@ requirements:
     - r-rlang >=0.3.0
   run:
     - r-base
-    - r-rlang >=0.3.0
     - {{native}}gcc-libs         # [win]
+    - r-rlang >=0.3.0
 
 test:
   commands:
@@ -42,12 +42,11 @@ test:
     - "\"%R%\" -e \"library('ellipsis')\""  # [win]
 
 about:
-  home: https://github.com/hadley/ellipsis
+  home: https://github.com/r-lib/ellipsis
   license: GPL-3
-  summary: 'In S3 generics, it''s useful to take ... so that methods can have additional argument.
-    But this flexibility comes at a cost: misspelled arguments will be silently ignored.
-    The ellipsis packages is an experiment that allows a generic to warn if any arguments
-    passed in ... are not used.'
+  summary: 'The ellipsis is a powerful tool for extending functions. Unfortunately  this power
+    comes at a cost: misspelled arguments will be silently ignored.  The ellipsis package
+    provides a collection of functions to catch problems and alert the user.'
   license_family: GPL3
   license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
 
@@ -57,21 +56,22 @@ extra:
     - philip-khor
 
 # Package: ellipsis
-# Version: 0.1.0
+# Version: 0.2.0.1
 # Title: Tools for Working with ...
-# Description: In S3 generics, it's useful to take ... so that methods can have additional argument. But this flexibility comes at a cost: misspelled arguments will be silently ignored. The ellipsis packages is an experiment that allows a generic to warn if any arguments passed in ... are not used.
+# Description: The ellipsis is a powerful tool for extending functions. Unfortunately  this power comes at a cost: misspelled arguments will be silently ignored.  The ellipsis package provides a collection of functions to catch problems and alert the user.
 # Authors@R: c( person("Hadley", "Wickham", , "hadley@rstudio.com", role = c("aut", "cre")), person("RStudio", role = "cph") )
 # License: GPL-3
 # Encoding: UTF-8
 # LazyData: true
 # RoxygenNote: 6.1.1
-# URL: https://github.com/hadley/ellipsis
-# BugReports: https://github.com/hadley/ellipsis/issues
+# URL: https://github.com/r-lib/ellipsis
+# BugReports: https://github.com/r-lib/ellipsis/issues
 # Depends: R (>= 3.1)
+# Imports: rlang (>= 0.3.0)
 # Suggests: covr, testthat
 # NeedsCompilation: yes
-# Packaged: 2019-02-18 23:26:43 UTC; hadley
+# Packaged: 2019-07-02 09:00:09 UTC; ripley
 # Author: Hadley Wickham [aut, cre], RStudio [cph]
 # Maintainer: Hadley Wickham <hadley@rstudio.com>
 # Repository: CRAN
-# Date/Publication: 2019-02-19 05:30:03 UTC
+# Date/Publication: 2019-07-02 09:27:27 UTC
