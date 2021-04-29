@@ -1,4 +1,4 @@
-{% set version = "0.3.1" %}
+{% set version = "0.3.2" %}
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
 
@@ -10,7 +10,7 @@ source:
   url:
     - {{ cran_mirror }}/src/contrib/ellipsis_{{ version }}.tar.gz
     - {{ cran_mirror }}/src/contrib/Archive/ellipsis/ellipsis_{{ version }}.tar.gz
-  sha256: 4f8a15158dfc27cdc0f7554c7a61e92b02e4d70bfc3d968f01a99da2189b75db
+  sha256: a90266e5eb59c7f419774d5c6d6bd5e09701a26c9218c5933c9bce6765aa1558
 
 build:
   merge_build_host: true  # [win]
@@ -43,11 +43,11 @@ test:
 
 about:
   home: https://ellipsis.r-lib.org, https://github.com/r-lib/ellipsis
-  license: GPL-3
+  license: MIT
   summary: 'The ellipsis is a powerful tool for extending functions. Unfortunately this power comes at a cost: misspelled arguments will be silently ignored. The ellipsis package provides a collection of functions to catch problems and alert the user.'
-  license_family: GPL3
+  license_family: MIT
   license_file:
-    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
 
 extra:
   recipe-maintainers:
