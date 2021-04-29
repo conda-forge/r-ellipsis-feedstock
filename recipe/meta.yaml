@@ -43,11 +43,11 @@ test:
 
 about:
   home: https://ellipsis.r-lib.org, https://github.com/r-lib/ellipsis
-  license: GPL-3
+  license: MIT
   summary: 'The ellipsis is a powerful tool for extending functions. Unfortunately this power comes at a cost: misspelled arguments will be silently ignored. The ellipsis package provides a collection of functions to catch problems and alert the user.'
-  license_family: GPL3
+  license_family: MIT
   license_file:
-    - {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
+    - {{ environ["PREFIX"] }}/lib/R/share/licenses/MIT
 
 extra:
   recipe-maintainers:
