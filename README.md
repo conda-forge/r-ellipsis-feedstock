@@ -3,7 +3,7 @@ About r-ellipsis
 
 Home: https://ellipsis.r-lib.org, https://github.com/r-lib/ellipsis
 
-Package license: GPL-3
+Package license: MIT
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/r-ellipsis-feedstock/blob/master/LICENSE.txt)
 
